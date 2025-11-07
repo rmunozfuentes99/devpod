@@ -1,8 +1,8 @@
 {
   "name": "Entorno de Desarrollo del Equipo",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20-bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {"moby": false},
+    "ghcr.io/devcontainers/features/docker-from-docker:1": {},
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
@@ -19,12 +19,9 @@
     }
   },
   "forwardPorts": [3000, 8080, 5432],
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "if [ -f package.json ]; then npm install; fi",
   "remoteUser": "node",
   "mounts": [
     "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
-  ],
-  "runArgs": [
-    "--name=mi-dev-container"
   ]
 }
