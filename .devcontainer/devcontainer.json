@@ -21,8 +21,7 @@
   "forwardPorts": [3000, 8080, 5432],
   "postCreateCommand": "if [ -f package.json ]; then npm install; fi",
   "remoteUser": "node",
-  "mounts": [
-  "mounts": [
-  "source=C:\\\\Users\\\\C628I\\\\.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
-]
+   "mounts": [
+    "source=C:\\\\Users\\\\C628I\\\\.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
+  ]
 }
