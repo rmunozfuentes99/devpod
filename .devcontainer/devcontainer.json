@@ -22,7 +22,7 @@
     }
   },
   "forwardPorts": [3000, 8080, 5432],
-  "postCreateCommand": "if [ -f package.json ]; then npm install; fi",
+  "postCreateCommand": "if [ -f package.json ]; then npm install; fi && ./devcontainer-scripts/setup-python.sh",
   "remoteUser": "node",
    "mounts": [
     "source=C:\\\\Users\\\\C628I\\\\.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
