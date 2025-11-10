@@ -30,6 +30,7 @@
   "postCreateCommand": "if [ -f package.json ]; then npm install; fi",
   "remoteUser": "node",
    "mounts": [
-    "source=${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
+    "source=${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached",
+     "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
     ]
 }
